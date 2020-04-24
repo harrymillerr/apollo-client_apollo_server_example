@@ -1,0 +1,21 @@
+type Cases {
+  Lat: String
+  Lon: String
+  Confirmed: String
+  Deaths: Int
+  Recovered: Int
+  Active: Int
+  Date: String
+}
+
+type Country {
+  Country: String
+  Slug: String
+  LiveCases: [Cases]
+  TotalCases: [Cases]
+}
+
+type Query {
+  getAllCountries: [Country]
+  getCountry(slug: String!): Country
+}
